@@ -1,0 +1,159 @@
+.loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    cursor: wait;
+    background-color: #fbfbfb;
+    position: fixed;
+    animation-name: loader;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loader{
+    0%{
+        z-index: 999;
+        opacity: 1;
+    }
+
+    99%{
+        z-index: 999;
+        opacity: 1;
+    }
+
+    100%{
+        z-index: -999;
+        opacity: 0;
+    }
+}
+
+.loading span{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    background-color:#000000;
+    border-radius: 50%;
+    display: inline-block;
+    animation-name: dots;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+ }
+
+ @keyframes dots{
+    50%{
+        opacity: 0;
+        transform: scale(0.7) translateY(10px);
+    }
+}
+
+ .loading span:nth-child(2) {
+    background-color: #4e4e4e ;
+    animation-delay: 0.4s;
+ }
+
+ .loading span:nth-child(3) {
+    background-color: #c0c0c0;
+    animation-delay: 0.8s;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    z-index: 1;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(galaxy.jpg);
+    background-position: center;
+    background-repeat: no-repeat ;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    overflow-y: hidden;
+}
+
+section{
+    padding-top: 10%;
+}
+
+.name{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0px;
+    font-weight: 900;
+}
+
+.compétances{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 40px;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-linkedin-in, .fa-github, .fa-envelope{
+    border: 2px white solid;
+    border-radius: 50px;
+    margin-left: 20px;
+    padding: 20px;
+    color: white;
+    transition: 0.4s;
+}
+
+.fa-linkedin-in:hover, .fa-github:hover, .fa-envelope:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.name, .compétances, .fa-linkedin-in, .fa-github, .fa-envelope{
+    animation-name: transition;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    opacity: 0;
+}
+
+@keyframes transition{
+    100%{
+        opacity: 1;
+    }
+}
+
+.name{
+    animation-delay: 5.5s; 
+    transform: translateY(5px);
+}
+
+.compétances{
+    animation-delay: 6s; 
+    transform: translateY(5px);
+}
+
+.fa-linkedin-in{
+    animation-delay: 6.5s; 
+    transform: translateY(5px);
+}
+
+.fa-github{
+    animation-delay: 7s; 
+    transform: translateY(5px);
+}
+
+.fa-envelope{
+    animation-delay: 7.5s; 
+    transform: translateY(5px);
+}
